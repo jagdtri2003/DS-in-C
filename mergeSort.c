@@ -7,18 +7,17 @@ void merge(int arr[],int p,int q,int r);
 int main(){
 
     int n,i;
-    printf("Enter the number of terms : " );
+    printf("Enter the number of elements : " );
     scanf("%d",&n);
     int a[n];
-
+    printf("Enter elements : ");
     for (i=0;i<n;i++){
-        printf("Enter element %d : ",i+1);
         scanf("%d",&a[i]);
     }
 
     merge_sort(a,0,n-1);
 
-    printf("After Sorting : ");
+    printf("Sorted Array is : ");
     for (i=0;i<n;i++){
         printf("%d\t",a[i]);
     }
