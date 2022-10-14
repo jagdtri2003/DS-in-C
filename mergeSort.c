@@ -44,7 +44,6 @@ void merge(int arr[],int p,int q,int r){
 
     for (i=0;i<n1;i++){
         L[i]=arr[p+i];
-        //printf("%d ",L[i]);
     }
 
     for (j=0;j<n1;j++){
