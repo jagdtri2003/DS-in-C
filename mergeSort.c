@@ -16,6 +16,7 @@ int main(){
     for (i=0;i<n;i++){
         printf("%d\t",a[i]);
     }
+    return 0;
 }
 
 void merge_sort(int arr[],int p,int r){
