@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #define Max 10
 
-void push(int data);
+void push(int);
 int pop();
 int peek();
 bool isFull();
@@ -23,32 +23,72 @@ int main(){
             push(key);
             break;
         case 2:
-            pop();
+            key=pop();
+            if (key!=-1)
+                printf("Poped Element is %d ",key);
             break;
         case 3:
-            printf("Enter the value : ");
-            scanf("%d",&key);
-            push(key);
+            key=peek();
+            if (key!=-1)
+                printf("Top Element is %d ",key);
             break;
         case 4:
-            printf("Enter the value : ");
-            scanf("%d",&key);
-            push(key);
+            if (isEmpty())
+                printf("Stack is empty ");
+            else
+                printf("Stack is not empty");
             break;
         case 5:
-            printf("Enter the value : ");
-            scanf("%d",&key);
-            push(key);
+            if (isFull())
+                printf("Stack is full ");
+            else
+                printf("Stack is not full");
             break;       
         default:
             printf("Invalid input !!");
             break;
         }
-        printf("Do you want to continue(0/1) :");
+        printf("\nDo you want to continue(0/1) :");
         scanf("%d",&cnt);
     }while(cnt);
 
-
-
     return 0;
+}
+
+void push(int key){
+    if (isFull()){
+        printf("Stack is Full !");
+        return;
+    }
+    top++;
+    Stack[top]=key;
+}
+
+int pop(){
+    if (isEmpty()){
+        printf("Stack is Empty !");
+        return -1;
+    }
+    int key=Stack[top];
+    top--;
+    return key;
+}
+
+int peek(){
+    if (isEmpty()){
+        printf("Stack is Empty !");
+        return -1;
+    }
+    return Stack[top];
+}
+bool isFull(){
+    if (top==Max-1)
+        return true;
+    return false;
+}
+
+bool isEmpty(){
+    if (top==-1)
+        return true;
+    return false;
 }
