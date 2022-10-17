@@ -17,13 +17,13 @@ int main(){
     scanf("%s",postfix);
     post=postfix;
     while((z=*post)!='\0'){
-        if (!isdigit(z)){
+        if (isdigit(z))
+            push(((int)z)-48);
+        else{
             x=pop();
             y=pop();
             push(solve(x,y,z));
-        }
-        else
-            push(((int)z)-48);
+        }   
         post++;
     }
     printf("Result is : %d",(int)pop());
@@ -40,7 +40,7 @@ void push(char x){
 char pop(){
 
 	if (top==-1)
-		return NULL;
+		return -1;
 	return Stack[top--];
 
 }
