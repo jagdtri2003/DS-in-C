@@ -7,6 +7,7 @@ void push(char);
 char pop();
 int priority(char);
 
+
 int main(){
 	
 	char infix[30],postfix[30];
@@ -31,7 +32,8 @@ int main(){
 				
 				*post=pop();
 				post++;		
-			}	
+			}
+				
 		}
 		
 		else{
@@ -45,7 +47,8 @@ int main(){
 					*post=pop();
 					post++;
 						
-				}			
+				}
+				push(x);			
 			}		
 		}
 	in++;
@@ -59,6 +62,9 @@ int main(){
 	}
 	
 	printf("Postfix Expression is %s ",postfix);
+	
+	
+
 
 	return 0;
 }
