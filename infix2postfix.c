@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <math.h>
 
-char Stack[20];
+char Stack[30];
 int top=-1;
 void push(char);
 char pop();
