@@ -45,14 +45,16 @@ char pop(){
 
 }
 int solve(int x,int y,char z){
-    if (z=='+')
-        return y+x;
-    else if (z=='-')
-        return y-x;
-    else if (z=='*')
-        return y*x;
-    else if (z=='/')
-        return y/x;
-    else if (z=='^')
-        return pow(y,x);
+    switch(z){
+        case '+':
+            return y+x;
+        case '-':
+            return y-x;
+        case '*':
+            return y*x;
+        case '/':
+            return y/x;
+        case '^':
+            return pow(y,x);
+    }       
 }
