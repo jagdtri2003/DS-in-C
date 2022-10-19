@@ -63,28 +63,7 @@ int main(){
 	}
 	
 	printf("Postfix Expression is %s ",postfix);
-	
-	printf("Result Calculation :");
-	
-	post=postfix;
-	top=-1;
-	while((x=*post)!='\0'){
-	
-		if (x=='*')
-			push(pop()*pop());
-		else if (x=='/')
-			push(pop()/pop());
-		else if (x=='^')
-			push(pow(pop(),pop()));
-		else if (x=='+')
-			push(pop()+pop());
-		else if (x=='-')
-			push(pop()-pop());		
-		else 
-			push(x);
-	}
-	printf("Result : %s ",pop());
-  
+
   
 	return 0;
 }
