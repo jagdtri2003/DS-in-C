@@ -18,6 +18,7 @@ node * createNewNode(int);
 void inOrderTraversal(node *);
 void preOrderTraversal(node *);
 void postOrderTraversal(node *);
+int countLeaves(node* root);
 
 int main(){
 
@@ -25,6 +26,8 @@ int main(){
     root->left=createNewNode(2);
     root->left->left=createNewNode(4);
     root->right=createNewNode(3);
+
+    printf("Number of Leaf Nodes : %d ",countLeaves(root));
 
     printf("\ninOrderTraversal : ");
     inOrderTraversal(root);
@@ -68,4 +71,12 @@ void postOrderTraversal(node * root){
     postOrderTraversal(root->left);
     postOrderTraversal(root->right);
     printf("%d ",root->data);
+}
+
+int countLeaves(node* root){
+    if (root==NULL)
+        return 0;
+    if (root->left==NULL && root->right==NULL)
+        return 1;
+    return countLeaves(root->left) + countLeaves(root->right);
 }
