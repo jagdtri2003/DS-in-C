@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
+
 struct Node {
     int data;
     struct Node *left;
