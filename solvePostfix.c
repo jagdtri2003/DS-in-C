@@ -32,18 +32,15 @@ int main(){
 
 
 void push(char x){
-	
 	Stack[++top]=x;
-
 }
 
 char pop(){
-
 	if (top==-1)
 		return -1;
 	return Stack[top--];
-
 }
+
 int solve(int x,int y,char z){
     switch(z){
         case '+':
