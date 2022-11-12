@@ -9,20 +9,15 @@ int dequeue();
 int main(){
 
 	int key,choice,ch;
-	
 	do{
-	
 		printf("1.Insertion in queue \n2.Deletion in queue\nEnter your choice : ");
 		scanf("%d",&choice);
-		
 		switch(choice){
-		
 			case 1:
 				printf("Enter the key : ");
 				scanf("%d",&key);
 				enqueue(key);
 				break;
-			
 			case 2:
 				if ((key=dequeue())!=-1)
 					printf("The Deleted Element is %d ",key);
@@ -34,15 +29,12 @@ int main(){
 		scanf("%d",&ch);
 	
 	}while(ch);
-
 	return 0;
 }
 
 
 void enqueue(int key){
-
 	if (rear==MAX-1){
-	
 		printf("OVERFLOW !! \n");
 		return ;
 	}
@@ -50,28 +42,23 @@ void enqueue(int key){
 		front=0;
 		rear=0;
 		queue[front]=key;
-		return;
-		
+		return;	
 	}
 	queue[++rear]=key;
 
 }
 
 int dequeue(){
-
 	int key;
 	if (front==-1){
-	
 		printf("UNDERFLOW !!\n");
 		return -1;
-	}
-		
+	}	
 	if (front==rear){
 		key=queue[front--];
 		rear--;
 		return key;
 	}
-	
 	return queue[front++];
 }
 
