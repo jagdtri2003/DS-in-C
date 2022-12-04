@@ -15,7 +15,6 @@ int main(){
 	for (i=1;i<n;i++)
 		if (max<a[i])
 			max=a[i];
-			
 	
 	//Determining Digits in Max Element 
 	while(max!=0){
@@ -24,7 +23,6 @@ int main(){
 	}
 	
 	while(digit!=0){
-	
 		for(i=0;i<n;i++)
 			count[i]=0;	
 		for (i=0;i<n;i++){
@@ -36,19 +34,14 @@ int main(){
 			if (count[j]>0){
 				for (k=0;k<count[j];k++)
 					a[m++]=bin[j][k];
-			
 			}
-		
 		}
-	
 		digit--;
 		divisor*=10;
 	}
 	printf("Sorted array :\n");
 	for (i=0;i<n;i++)
 		printf("%d\t",a[i]);
-	
-	
 
 	return 0;
 }
