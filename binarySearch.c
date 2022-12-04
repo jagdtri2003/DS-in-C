@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 
-int binarySearch(int arr[], int lb,int ub,int key)
-{
+int binarySearch(int arr[], int lb,int ub,int key){
+	
 	if (ub >= lb) {
 		int mid = lb + (ub - lb) / 2;
 
