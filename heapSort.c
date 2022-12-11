@@ -14,7 +14,7 @@ int main(){
 	
 	heapSort();
 	
-	printf("Sortest List is : \n");
+	printf("Sorted List is : \n");
 	for (i=1;i<=n;i++)
 		printf("%d\t",a[i]);
 		
