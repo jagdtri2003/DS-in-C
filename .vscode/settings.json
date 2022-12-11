@@ -1,5 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c"
-    }
+    },
+    "cSpell.words": [
+        "heapify"
+    ]
 }
