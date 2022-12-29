@@ -74,7 +74,7 @@ int pop(){
 }
 
 int peek(){
-    if (isEmpty){
+    if (isEmpty()){
         printf("Stack is empty !");
         return -1;
     }
