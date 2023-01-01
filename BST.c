@@ -16,9 +16,7 @@ int main()
     int choice,ch,key;
     do
     {
-        printf("\n1.Searching");
-        printf("\n2.Insertion");
-        printf("\n3.Traversing\n4. Deletion");
+        printf("\n1.Searching\n2.Insertion\n3.Traversing\n4. Deletion");
         printf("\nCHOICE(?):");
         scanf("%d",&choice);
         switch(choice)
@@ -32,7 +30,7 @@ int main()
                     scanf("%d",&key);
                     insertion(key);
                     break;
-            case 3: printf("\nThe Inoreder Traversal:\n");
+            case 3: printf("\nThe Inorder Traversal:\n");
                     inorder_traversal(root);
                     break;
             case 4: printf("\nEnter the node to be deleted:");
