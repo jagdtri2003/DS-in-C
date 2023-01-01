@@ -5,11 +5,11 @@ struct BST
     int info;
     struct BST *left;
     struct BST *right;
-}*root=NULL,*parent,*loc,*temp,*new_node,*child;
+}*root=NULL,*parent,*loc,*temp,*new_node,*child,*suc,*parsuc;
 void searching(int);
 void insertion(int);
 void deletion(int);
-void deletion_case_1_2(int);
+void deletion_case_1_2(struct BST*, struct BST*);
 void inorder_traversal(struct BST *);
 int main()
 {
@@ -115,15 +115,34 @@ void deletion(int key)
     searching(key);
     if(loc->left!=NULL && loc->right!=NULL)
     {
-        deletion_case_3(key);
+        parsuc=loc;;
+        suc=loc->right;
+        while(suc->left!=NULL)
+        {
+            parsuc=suc;
+            suc=suc->left;
+        }
+    deletion_case_1_2(suc,parsuc);
+    suc->left=loc->left;
+    suc->right=loc->right;
+    if(parent==NULL)
+        root=suc;
+    else
+    {
+    if(loc==parent->left)
+        parent->left=suc;
+    else
+        parent->right=suc;
+
+    }
     }
     else
     {
-        deletion_case_1_2(key);
+        deletion_case_1_2(loc,parent);
     }
 }
 
-void deletion_case_1_2(int key)
+void deletion_case_1_2(struct BST *loc, struct BST* parent)
 {
     if(loc->left==NULL && loc->right==NULL)
     {
