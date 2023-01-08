@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to make the list look nice */
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+      }
+      li {
+        background-color: lightgray;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+      }
+      /* Add some styling for the pointers */
+      li::after {
+        content: "";
+        position: relative;
+        left: 50px;
+        top: 5px;
+        width: 40px;
+        height: 40px;
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        transform: rotate(45deg);
+      }
+      /* Add a transition effect for the list items */
+      li {
+        transition: transform 0.5s ease-in-out;
+      }
+      /* Shift the list items to the right when a new node is added */
+      li.shift {
+        transform: translateX(50px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Linked List Simulation</h1>
+    <!-- Create the list elements -->
+    <ul id="list">
+      <li id="node1">Node 1</li>
+      <li id="node2">Node 2</li>
+      <li id="node3">Node 3</li>
+    </ul>
+    <!-- Add a form to enter the value of the new node -->
+    <form onsubmit="addNode(); return false;">
+      <label for="node-value">Node Value:</label>
+      <input type="text" id="node-value">
+      <button type="submit">Add Node</button>
+    </form>
