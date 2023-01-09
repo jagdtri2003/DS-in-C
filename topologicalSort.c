@@ -8,7 +8,6 @@ bool visited[n+1];
 void adj_matrix();
 void topological_sort(int);
 
-
 int main(){
     int i;
     printf("Enter the Edges : \n");
