@@ -14,8 +14,8 @@ int main(){
 	for(i=1;i<=k;i++)
 		c[i]=c[i]+c[i-1];
 	for(i=n-1;i>=0;i--){
-			b[c[a[i]]]=a[i];
-			c[a[i]]--;
+		b[c[a[i]]]=a[i];
+		c[a[i]]--;
 		}
 	printf("\nThe sorted list is:\n");
 	for(i=1;i<=n;i++)
