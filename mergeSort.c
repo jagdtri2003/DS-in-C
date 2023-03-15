@@ -32,7 +32,7 @@ void merge(int arr[],int p,int q,int r){
 
     int n1,n2,i,j,k;
     n1=q-p+1;
-    n2=r-p;
+    n2=r-q;
     int L[n1],R[n2];
     for (i=0;i<n1;i++){
         L[i]=arr[p+i];
