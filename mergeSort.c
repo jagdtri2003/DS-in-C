@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define inf 9999
-void merge_sort(int arr[],int p,int r);
+void mergeSort(int arr[],int p,int r);
 void merge(int arr[],int p,int q,int r);
 int main(){
     int n,i;
@@ -11,7 +11,7 @@ int main(){
     for (i=0;i<n;i++){
         scanf("%d",&a[i]);
     }
-    merge_sort(a,0,n-1);
+    mergeSort(a,0,n-1);
     printf("Sorted Array is : ");
     for (i=0;i<n;i++){
         printf("%d\t",a[i]);
@@ -19,11 +19,11 @@ int main(){
     return 0;
 }
 
-void merge_sort(int arr[],int p,int r){
+void mergeSort(int arr[],int p,int r){
     if (p<r){
         int q=(p+r)/2;
-        merge_sort(arr,p,q);
-        merge_sort(arr,q+1,r);
+        mergeSort(arr,p,q);
+        mergeSort(arr,q+1,r);
         merge(arr,p,q,r);
     }
 }
