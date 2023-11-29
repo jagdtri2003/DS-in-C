@@ -37,7 +37,7 @@ void merge(int arr[],int p,int q,int r){
     for (i=0;i<n1;i++){
         L[i]=arr[p+i];
     }
-    for (j=0;j<n1;j++){
+    for (j=0;j<n2;j++){
         R[j]=arr[q+j+1];
     }
     L[n1]=inf;
